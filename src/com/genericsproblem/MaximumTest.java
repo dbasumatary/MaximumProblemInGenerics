@@ -1,20 +1,21 @@
 package com.genericsproblem;
 import java.lang.*;
-/*Maximum of three integer using generics*/
+/*Maximum of three float numbers using generics*/
 
-public class MaximumTest <T extends Comparable<T>>{           //It ensures the object of type T are comparable
-    public static <T extends Comparable<T>> void maximumValue(T integer1, T integer2, T integer3){
+public class MaximumTest <T extends Comparable<T>>{        //It ensures the object of type T are comparable using interface
+    public static <T extends Comparable<T>> void maximumValue(T input1, T input2, T input3){
 
-        T maximum = integer1;                               //Assuming integer1 is the largest initially
-        if (integer2.compareTo(maximum) > 0){
-            maximum = integer2;                             //Now integer2 is the largest
+        T maximum = input1;                               //Assuming input1 is the largest initially
+        if (input2.compareTo(maximum) > 0){
+            maximum = input2;                             //Now input2 is the largest
         }
-        if (integer3.compareTo(maximum) > 0) {
-            maximum = integer3;                             //integer3 is the largest
+        if (input3.compareTo(maximum) > 0) {
+            maximum = input3;                             //input3 is the largest
         }
-        System.out.println("Maximum of "+ integer1 +", "+ integer2 +" and "+ integer3 +" is " + maximum);
+        System.out.println("Maximum of "+ input1 +", "+ input2 +" and "+ input3 +" is " + maximum);
     }
     public static void main(String[] args) {
-        maximumValue(34,33,35);                              //calling the method
+        maximumValue(34,33,35);                              //calling the method for integers
+        maximumValue(6.21,6.19,6.24);                        //calling the method for float values
     }
 }
